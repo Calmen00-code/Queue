@@ -2,6 +2,7 @@
 #include <string.h>
 #include "LinkedList.h"
 #include "queue.h"
+#include "header.h"
 #define TOL 0.001
 
 double absolute( double a )
@@ -19,6 +20,7 @@ int main()
     int age = 21;
     double mark = 81.5;
     char grade = 'A';
+    int empty = 0;
     queue = createLinkedList();
 
     enqueue( queue, str );
@@ -38,6 +40,13 @@ int main()
         printf("PASSED\n\n");
     else
         printf("FAILED\n\n"); 
+
+    printf("Test Empty: ");
+    empty = isEmpty( queue );
+    if( empty == FALSE )
+        printf("PASSED\n\n");
+    else
+        printf("FAILED\n\n");
 
     printf("Test Dequeue Integer: ");
     if( *(int *) dequeue( queue ) == age )
@@ -64,6 +73,13 @@ int main()
     else
         printf("FAILED\n\n");
 
+    printf("Test Empty: ");
+    empty = isEmpty( queue );
+    if( empty == TRUE )
+        printf("PASSED\n\n");
+    else
+        printf("FAILED\n\n");
+        
     freeQueue( queue );
 
     return 0;

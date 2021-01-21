@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "queue.h"
+#include "header.h"
 
 LinkedList* createQueue()
 {
@@ -29,6 +30,15 @@ void* peek( LinkedList *queue )
     retData = peekLast( queue );
 
     return retData;
+}
+
+int isEmpty( LinkedList *queue )
+{
+    int empty = FALSE;
+    if( queue->head == NULL )
+        empty = TRUE;
+
+    return empty;
 }
 
 void freeQueue( LinkedList *queue )

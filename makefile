@@ -6,13 +6,13 @@ EXEC = main
 $(EXEC) : $(OBJ)
 	$(CC) $(OBJ) -o $(EXEC)
 
-queue.o : queue.c queue.h
+queue.o : queue.c queue.h header.h
 	$(CC) $(CFLAGS) -c queue.c
 
 LinkedList.o : LinkedList.c LinkedList.h
 	$(CC) $(CFLAGS) -c LinkedList.c
 
-QueueTest.o : QueueTest.c queue.h
+QueueTest.o : QueueTest.c queue.h header.h
 	$(CC) $(CFLAGS) -c QueueTest.c
 
 clean:
