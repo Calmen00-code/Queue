@@ -1,29 +1,28 @@
-#ifndef LINKEDLIST
-#define LINKEDLIST
-
+#ifndef LINKED_LIST
+#define LINKED_LIST
 
 typedef struct LinkedListNode
 {
     struct LinkedListNode *next;
     void *data;
+    char type;
 } LinkedListNode;
 
-typedef struct
+typedef struct LinkedList
 {
-    LinkedListNode *head;
-    LinkedListNode *tail;
+    struct LinkedListNode *head;
+    struct LinkedListNode *tail;
     int count;
 } LinkedList;
 
 LinkedList* createLinkedList();
-void insertStart(LinkedList*, void*);
-void* removeStart(LinkedList*);
-void insertLast(LinkedList*, void*);
-void* removeLast(LinkedList*);
-void* peekLast(LinkedList*);
-void* peekFirst(LinkedList*);
-
-void printLinkedList(LinkedList *);
-void freeLinkedList(LinkedList *);
+void insertStart( LinkedList*, void*, char );
+void insertLast( LinkedList*, void*, char );
+void* removeStart( LinkedList* );
+void* removeLast( LinkedList* );
+void printLinkedList( LinkedList* );
+void* peekFirst( LinkedList * );
+void* peekLast( LinkedList * );
+void freeLinkedList( LinkedList* );
 
 #endif

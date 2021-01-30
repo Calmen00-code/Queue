@@ -5,14 +5,14 @@
 
 LinkedList* createQueue()
 {
-    LinkedList *queue = malloc(sizeof(LinkedList));
+    LinkedList *queue = createLinkedList();
     return queue;
 }
 
-void enqueue( LinkedList *queue, void *data )
+void enqueue( LinkedList *queue, void *data, char dataType )
 {
     if( queue != NULL )
-        insertLast( queue, data );
+        insertLast( queue, data, dataType );
 }
 
 void* dequeue( LinkedList *queue )
@@ -32,10 +32,10 @@ void* peek( LinkedList *queue )
     return retData;
 }
 
-int isEmpty( LinkedList *queue )
+int isQueueEmpty( LinkedList *queue )
 {
     int empty = FALSE;
-    if( queue->head == NULL )
+    if( queue->count == 0 )
         empty = TRUE;
 
     return empty;
